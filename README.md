@@ -60,6 +60,18 @@ The git repository will be checked out into a local folder named `website`.
 
 	> For newbies, I'd suggest that you download and install [Postgres Mac App](http://postgresapp.com). You may need to edit `config/database.yml` to [connect via TCP socket](http://postgresapp.com/documentation/configuration-ruby.html).
 
+2. Later on `bundle install` will try to compile the `pg` library.  That will need access to `pg_config`.  In order to get `pg_config` and `pg_restore` on your path, do:
+
+    ```
+    echo 'export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"' >> ~/.bash_profile
+    ```
+
+    and load it into your current shell with:
+
+    ```
+    source ~/.bash_profile
+    ```
+
 ### Install Node.js
 
 1. Node.js is required for some of the Ruby gems. (There are [alternatives](https://github.com/sstephenson/execjs).)
