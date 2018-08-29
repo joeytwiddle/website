@@ -24,35 +24,35 @@ The git repository will be checked out into a local folder named `website`.
 2. Install [rbenv](https://github.com/rbenv/rbenv):
 
 	```
-brew update
-brew install rbenv ruby-build
-```
+	brew update
+	brew install rbenv ruby-build
+	```
 
 3. Add `rbenv` support to your local profile:
 
 	```
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-```
+	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+	echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+	```
 
 	If you are using `zsh`:
 
 	```
-echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-```
+	echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+	```
 
 3. Install the current Ruby version:
 
 	```
-rbenv install -l
-rbenv install 2.3.0
-```
+	rbenv install -l
+	rbenv install 2.3.0
+	```
 
 4. Use it globally:
 
 	```
-rbenv global 2.3.0
-```
+	rbenv global 2.3.0
+	```
 
 ### Install PostgreSQL
 
@@ -67,22 +67,22 @@ rbenv global 2.3.0
 	Install Node.js:
 
 	```
-brew install node
-```
+	brew install node
+	```
 
 ### Install Rails
 
 1. Install [Bundler](http://bundler.io/):
 
 	```
-gem install bundler
-```
+	gem install bundler
+	```
 
 2. Install the rest of the Ruby Gems needed for the app (including Ruby on Rails):
 
 	```
-bundle install
-```
+	bundle install
+	```
 
 ### Prepare the Database
 
@@ -90,34 +90,34 @@ bundle install
 1. Create the database:
 
 	```
-bundle exec rake db:create
-```
+	bundle exec rake db:create
+	```
 
 2. Create the database tables:
 
 	```
-bundle exec rake db:migrate
-```
+	bundle exec rake db:migrate
+	```
 
 3. Prepare sample data:
 
 	```
-pg_restore --verbose --clean --no-acl --no-owner -h localhost -d website_development db/snapshot.dump
-```
+	pg_restore --verbose --clean --no-acl --no-owner -h localhost -d website_development db/snapshot.dump
+	```
 
 ### Start the development web server
 
 1. Prepare the environment file (one time exercise):
 
-  ```
-cp env.sample .env
-```
+	```
+	cp env.sample .env
+	```
 
 2. You can start the local development web server with the following command:
 
 	```
-foreman start
-```
+	foreman start
+	```
 
 3. You can now visit the local development site at [http://localhost:3000](http://localhost:3000).
 
